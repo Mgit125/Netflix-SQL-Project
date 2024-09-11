@@ -142,8 +142,88 @@ CREATE TABLE netflix
 	ORDER BY 2 DESC;
 ```
 
+### 10. Find the eah year and the average number of movies release by India on Netflix and return top 5 year with highest avg movies release
+
+```sql
+	SELECT 
+		EXTRACT(YEAR FROM TO_DATE(date_added, 'Month DD, YYYY')) as YEAR,
+		COUNT(*) AS yearly_content,
+		ROUND(COUNT(*)::numeric/(SELECT COUNT(*) FROM netflix WHERE country = 'India')::numeric * 100, 2) AS avg_content
+	FROM netflix
+	WHERE
+		country = 'India'
+	GROUP BY 1
+	ORDER BY 
+		avg_content DESC
+		LIMIT 5
+```	
+	
+### 11. List all movies that are Documentaries
+
+```sql
+	SELECT * FROM netflix
+	WHERE
+		listed_in ilike '%documentaries%'
+		AND
+		type_movie = 'Movie'
+```
 
 
+### 12. Find all content without a director
+
+ ```sql
+		SELECT * FROM netflix
+		WHERE
+			director is null
+```
+
+### 13. Find how many movies actor 'Salman Khan' appeared in last 10 years
+
+```sql
+	SELECT * FROM netflix
+	WHERE 
+		casts ilike '%Salman Khan%'
+		AND
+		release_year > EXTRACT (YEAR FROM CURRENT_DATE)- 10
+
+```
+
+### 14. Find the top 10 actors who have appeared in the highest number of movies produced in India.
+
+```sql
+	SELECT 
+		UNNEST(STRING_TO_ARRAY(casts,',')) AS actors,
+		COUNT(*) AS total_content
+	FROM netflix
+	WHERE country ilike '%India'
+	GROUP BY 1
+	ORDER BY 2 DESC
+	LIMIT 10
+```
+
+### 15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field & label content containing these keywords as 'Bad' and all other content as 'Good' & count how many items fall into  each category
+
+```sql
+	WITH new_table
+	AS
+	(
+	SELECT
+	*,
+		CASE
+		WHEN
+			description ilike '%kill%' OR
+			description ilike '%violence' THEN 'Bad_Content'
+			ELSE 'Good_Content'
+		END category
+	FROM netflix
+	)
+	SELECT 
+		category,
+		COUNT(*) AS total_content
+	FROM new_table
+	GROUP BY 1
+
+```
 
 
 
