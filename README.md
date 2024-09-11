@@ -34,3 +34,6 @@ CREATE TABLE netflix
 );
 
 ```
+
+## Business Problems and Solutions
+
