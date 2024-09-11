@@ -68,16 +68,28 @@ CREATE TABLE netflix
 ### 3. List all movies released in the year 2020
 
 ```sql
-SELECT * FROM netflix;
-
-
-SELECT *
-FROM netflix
-WHERE
-	type_movie = 'Movie' 
-	AND 
-	release_year = 2020;
+	SELECT * FROM netflix;
+	
+	
+	SELECT *
+	FROM netflix
+	WHERE
+		type_movie = 'Movie' 
+		AND 
+		release_year = 2020;
 ```
 
+### 4. Find the top 5 countries with the most movies/TV shows on netflix
 
+```sql
+
+	SELECT 
+		UNNEST(STRING_TO_ARRAY(country,',')) AS new_country,
+		count(show_id) as total_content
+	from netflix
+	GROUP BY country
+	ORDER BY 
+		total_content DESC
+		LIMIT 5;
+```
 
