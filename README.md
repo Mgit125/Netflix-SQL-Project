@@ -240,7 +240,7 @@ Highlighting the top countries and the average content releases from India provi
 ### Content Categorization
 Classifying content based on specific keywords helps in understanding the nature of the available content on Netflix.
 
-## This analysis offers a comprehensive overview of Netflix’s content, aiding in content strategy and decision-making.
+#### This analysis offers a comprehensive overview of Netflix’s content, aiding in content strategy and decision-making.
 
 
 
