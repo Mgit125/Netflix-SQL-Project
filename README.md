@@ -93,3 +93,39 @@ CREATE TABLE netflix
 		LIMIT 5;
 ```
 
+
+### 5. Find the Longest movie from the data.
+
+```sql
+	SELECT * FROM netflix
+	WHERE
+	 type_movie = 'Movie'
+	 AND
+	 duration = (SELECT MAX(duration) from netflix)
+ ```
+
+
+### 6. Find the movies which are added in last 5 years
+```sql
+	SELECT 
+		*
+	FROM netflix
+	WHERE 
+		TO_DATE(date_added, 'Month DD, YYYY')>= CURRENT_DATE - INTERVAL '5 YEARS'
+	
+	
+	SELECT CURRENT_DATE - INTERVAL '5 YEARS'
+```
+
+### 7. Find all the movies/TV shows by director 'Rajiv Chilaka'
+```sql
+
+	SELECT * FROM netflix
+	WHERE
+		director LIKE '%Rajiv Chilaka%'
+	
+	SELECT * FROM netflix
+	WHERE
+		director = 'Rajiv Chilaka'
+```
+
