@@ -94,7 +94,7 @@ CREATE TABLE netflix
 ```
 
 
-### 5. Find the Longest movie from the data.
+### 5. Find the Longest movie from the netflix data
 
 ```sql
 	SELECT * FROM netflix
@@ -105,27 +105,51 @@ CREATE TABLE netflix
  ```
 
 
-### 6. Find the movies which are added in last 5 years
+### 6. Find the Movies which are added in last 5 years
 ```sql
 	SELECT 
 		*
 	FROM netflix
 	WHERE 
 		TO_DATE(date_added, 'Month DD, YYYY')>= CURRENT_DATE - INTERVAL '5 YEARS'
-	
-	
+
 	SELECT CURRENT_DATE - INTERVAL '5 YEARS'
 ```
 
-### 7. Find all the movies/TV shows by director 'Rajiv Chilaka'
+### 7. Find all the Movies/TV shows by director 'Rajiv Chilaka'
 ```sql
 
 	SELECT * FROM netflix
 	WHERE
 		director LIKE '%Rajiv Chilaka%'
-	
+```
+### 8. List all the TV shows who has more than 5 Seasons
+```sql
 	SELECT * FROM netflix
 	WHERE
-		director = 'Rajiv Chilaka'
+		type_movie = 'TV Show'
+		AND
+		duration > '5 Seasons';
 ```
+### 9. COunt the number of content items in each genre
+
+```sql
+	SELECT 
+		UNNEST(STRING_TO_ARRAY(listed_in, ',')) AS genres,
+		COUNT(show_id) AS total_count
+	FROM netflix
+	GROUP BY 1
+	ORDER BY 2 DESC;
+```
+
+
+
+
+
+
+
+
+
+
+
 
