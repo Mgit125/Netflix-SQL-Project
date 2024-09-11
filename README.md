@@ -131,7 +131,7 @@ CREATE TABLE netflix
 		AND
 		duration > '5 Seasons';
 ```
-### 9. COunt the number of content items in each genre
+### 9. Count the number of content items in each genre
 
 ```sql
 	SELECT 
