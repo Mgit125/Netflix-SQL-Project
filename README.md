@@ -244,6 +244,10 @@ Classifying content based on specific keywords helps in understanding the nature
 
 
 
+## Author - Srinivas
+
+This project is part of my portfolio, highlighting the SQL skills crucial for data analyst roles. If you have any questions, feedback, or are interested in collaborating, please don’t hesitate to reach out!
+
 
 
 
