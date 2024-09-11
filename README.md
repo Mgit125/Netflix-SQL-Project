@@ -16,6 +16,7 @@ The data for this project is sourced from the Kaggle dataset:
 ## Schema
 
 '''SQL
+
 CREATE TABLE netflix
 (
 	show_id	VARCHAR(10),
@@ -31,4 +32,5 @@ CREATE TABLE netflix
 	listed_in	VARCHAR(25),
 	description VARCHAR(300)
 );
+
 '''
