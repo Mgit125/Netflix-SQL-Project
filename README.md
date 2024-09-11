@@ -65,3 +65,19 @@ CREATE TABLE netflix
 	) as t1
 	WHERE ranking =1;
 ```
+### 3. List all movies released in the year 2020
+
+```sql
+SELECT * FROM netflix;
+
+
+SELECT *
+FROM netflix
+WHERE
+	type_movie = 'Movie' 
+	AND 
+	release_year = 2020;
+```
+
+
+
