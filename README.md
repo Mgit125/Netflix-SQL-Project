@@ -45,3 +45,23 @@ CREATE TABLE netflix
 	FROM netflix
 	GROUP BY type_movie;
 ```
+
+### 2. Find the most common rating for movies and TV shows.
+
+```sql
+
+	SELECT 
+		type_movie,
+		rating
+	FROM 
+	(
+	SELECT 
+		type_movie,
+		rating,
+		COUNT(*),
+		RANK() OVER (PARTITION BY type_movie ORDER BY COUNT(*) DESC) as ranking
+	FROM netflix
+	GROUP BY 1,2
+	) as t1
+	WHERE ranking =1;
+```
