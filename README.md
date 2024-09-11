@@ -12,3 +12,23 @@ Explore and categorize content based on specific criteria and keywords.
 ## Dataset
 The data for this project is sourced from the Kaggle dataset:
  https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download
+
+## Schema
+
+'''SQL
+CREATE TABLE netflix
+(
+	show_id	VARCHAR(10),
+	type	VARCHAR(10),
+	title VARCHAR(150),	
+	director VARCHAR(210),	
+	casts	VARCHAR(800),
+	country	VARCHAR(150),
+	date_added	VARCHAR(50),
+	release_year INT,	
+	rating	VARCHAR(10),
+	duration VARCHAR(20),	
+	listed_in	VARCHAR(25),
+	description VARCHAR(300)
+);
+'''
