@@ -15,7 +15,7 @@ The data for this project is sourced from the Kaggle dataset:
 
 ## Schema
 
-'''SQL
+'''sql
 
 CREATE TABLE netflix
 (
