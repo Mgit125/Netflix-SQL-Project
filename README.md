@@ -248,6 +248,8 @@ Classifying content based on specific keywords helps in understanding the nature
 
 This project is a significant component of my portfolio, demonstrating my proficiency in SQL, which is essential for data analyst roles. It showcases my ability to write complex queries, manage and manipulate databases, and extract meaningful insights from data.
 
+### Contact
+
 If you have any questions, feedback, or if you're interested in discussing potential collaborations, please feel free to contact me. I'm eager to connect and explore opportunities to leverage data for strategic decision-making.
 
 
